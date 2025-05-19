@@ -12,15 +12,19 @@ def build_subgraphs(view: bool = False) -> None:
     pf = PersonalFinance()
     pf.add_budgeting()
     pf.add_savings()
+    pf.add_investing()
     pf.generate(view=view)
 
     # --- Corporate ------------------------------------------------------
     cf = CorporateFinance()
-    cf.add_accounting()
-    cf.add_risk_management()
+    cf.add_capital()
+    cf.add_risk()
+    cf.add_growth()
     cf.generate(view=view)
 
     # --- Public ---------------------------------------------------------
     pubf = PublicFinance()
     pubf.add_taxation()
+    pubf.add_spending()
+    pubf.add_policy()
     pubf.generate(view=view)

@@ -1,7 +1,11 @@
 // public_finance
 digraph {
 	rankdir=TB
-	root [label="Public Finance" fillcolor="#f0d6d6" style=filled]
-	T [label=Taxation]
+	root [label="Public Finance" fillcolor="#E8F7E8" style=filled]
+	T [label=Taxation fillcolor="#E8F7E8" style=filled]
 	root -> T
+	S [label=Spending fillcolor="#E8F7E8" style=filled]
+	root -> S
+	P [label=Policy fillcolor="#E8F7E8" style=filled]
+	root -> P
 }

@@ -8,7 +8,7 @@ class FinanceMergeDynamic:
         self.output_folder = output_folder
         self.final         = Digraph(comment='Merged Finance Topics')
         self.final.attr(rankdir='TB')
-        self.final.node('F', 'Finance', style='filled', fillcolor='#a0a0a0', fontcolor='white')
+        self.final.node('F', 'FINANCE', style='filled', fillcolor='white')
 
     def merge(self):
         dot_files = [f for f in os.listdir(self.input_folder) if f.endswith('.dot')]

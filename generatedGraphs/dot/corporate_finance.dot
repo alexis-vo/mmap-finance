@@ -1,9 +1,11 @@
 // corporate_finance
 digraph {
 	rankdir=TB
-	root [label="Corporate Finance" fillcolor="#c2e0c6" style=filled]
-	A [label=Accounting]
-	root -> A
-	R [label="Risk Management"]
+	root [label="Corporate Finance" fillcolor="#DDE9FF" style=filled]
+	C [label=Capital fillcolor="#DDE9FF" style=filled]
+	root -> C
+	R [label=Risk fillcolor="#DDE9FF" style=filled]
 	root -> R
+	G [label=Growth fillcolor="#DDE9FF" style=filled]
+	root -> G
 }

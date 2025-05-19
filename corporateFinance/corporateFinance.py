@@ -1,14 +1,20 @@
 from base_graph import FinanceGraphBase
 
 class CorporateFinance(FinanceGraphBase):
+    COLOR = '#DDE9FF'
+
     def __init__(self):
         super().__init__('corporate_finance')
-        self.graph.node('root', 'Corporate Finance', style='filled', fillcolor='#c2e0c6')
+        self.graph.node('root', 'Corporate Finance', style='filled', fillcolor=self.COLOR)
 
-    def add_accounting(self):
-        self.graph.node('A', 'Accounting')
-        self.graph.edge('root', 'A')
+    def add_capital(self):
+        self.graph.node('C', 'Capital', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('root', 'C')
 
-    def add_risk_management(self):
-        self.graph.node('R', 'Risk Management')
+    def add_risk(self):
+        self.graph.node('R', 'Risk', style='filled', fillcolor=self.COLOR)
         self.graph.edge('root', 'R')
+
+    def add_growth(self):
+        self.graph.node('G', 'Growth', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('root', 'G')
