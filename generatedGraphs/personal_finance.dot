@@ -1,8 +1,9 @@
-// Personal Finance
+// personal_finance
 digraph {
-	P [label="Personal Finance" fillcolor="#f4d8b2" style=filled]
+	rankdir=TB
+	root [label="Personal Finance" fillcolor="#f4d8b2" style=filled]
 	B [label=Budgeting fillcolor="#cce5ff" style=filled]
-	P -> B
+	root -> B
 	S [label=Savings fillcolor="#d4edda" style=filled]
-	P -> S
+	root -> S
 }

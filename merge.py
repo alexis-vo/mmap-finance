@@ -53,4 +53,4 @@ class FinanceMergeDynamic:
 
     def generate(self, filename='merged_finance', view=False):
         path = os.path.join(self.output_folder, filename)
-        self.final.render(path, view=view, format='pdf')
+        self.final.render(path, view=view, format='pdf', cleanup=True)

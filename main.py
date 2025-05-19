@@ -1,26 +1,20 @@
 from personalFinance.personalFinance import PersonalFinance
-from corporateFinance import CorporateFinance
-from publicFinance import PublicFinance
+from corporateFinance.corporateFinance import CorporateFinance
+from publicFinance.publicFinance import PublicFinance
 from merge import FinanceMergeDynamic
 
-def build_subgraphs(output_folder = 'generatedGraphs', view=False):
-    
-    # Personal
-    personal = PersonalFinance()
-    personal.add_budgeting()
-    personal.add_savings()
-    personal.generate(output_path=f'{output_folder}/personal_finance', view=view)
+def build_subgraphs(view=False):
+    pf = PersonalFinance()
+    pf.add_budgeting(); pf.add_savings()
+    pf.generate(view=view)
 
-    # Corporate
-    corporate = CorporateFinance()
-    corporate.add_accounting()
-    corporate.add_risk_management()
-    corporate.generate(output_path=f'{output_folder}/corporate_finance', view=view)
+    cf = CorporateFinance()
+    cf.add_accounting(); cf.add_risk_management()
+    cf.generate(view=view)
 
-    # Public
-    public = PublicFinance()
-    public.add_taxation()
-    public.generate(output_path=f'{output_folder}/public_finance', view=view)
+    pubf = PublicFinance()
+    pubf.add_taxation()
+    pubf.generate(view=view)
 
 def main(view=False, merge_global=True):
     build_subgraphs(view=view)
@@ -29,8 +23,6 @@ def main(view=False, merge_global=True):
         merger = FinanceMergeDynamic()
         merger.merge()
         merger.generate(view=view)
-
-    
 
 if __name__ == '__main__':
     main(view=False, merge_global=True)

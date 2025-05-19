@@ -1,21 +1,14 @@
-from graphviz import Digraph
-from personalFinance.budgeting import Budgeting
-from personalFinance.savings import Savings
+from base_graph import FinanceGraphBase
 
-class PersonalFinance:
+class PersonalFinance(FinanceGraphBase):
     def __init__(self):
-        self.graph = Digraph(comment='Personal Finance')
-        self.graph.node('P', 'Personal Finance', style='filled', fillcolor='#f4d8b2')
+        super().__init__('personal_finance')
+        self.graph.node('root', 'Personal Finance', style='filled', fillcolor='#f4d8b2')
 
     def add_budgeting(self):
-        Budgeting().add_to_graph(self.graph, 'P')
+        self.graph.node('B', 'Budgeting', style='filled', fillcolor='#cce5ff')
+        self.graph.edge('root', 'B')
 
     def add_savings(self):
-        Savings().add_to_graph(self.graph, 'P')
-
-    def generate(self, output_path='personal_finance', view=False):
-        self.graph.render(output_path, view=view)
-
-        dot_path = f'{output_path}.dot'
-        with open(dot_path, 'w', encoding='utf-8') as f:
-            f.write(self.graph.source)
+        self.graph.node('S', 'Savings', style='filled', fillcolor='#d4edda')
+        self.graph.edge('root', 'S')

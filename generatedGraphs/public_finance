@@ -1,6 +1,0 @@
-// Public Finance
-digraph {
-	PU [label="Public Finance" fillcolor="#f0d6d6" style=filled]
-	T [label=Taxation]
-	PU -> T
-}

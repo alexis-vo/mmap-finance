@@ -1,8 +1,9 @@
-// Corporate Finance
+// corporate_finance
 digraph {
-	C [label="Corporate Finance" fillcolor="#c2e0c6" style=filled]
+	rankdir=TB
+	root [label="Corporate Finance" fillcolor="#c2e0c6" style=filled]
 	A [label=Accounting]
-	C -> A
+	root -> A
 	R [label="Risk Management"]
-	C -> R
+	root -> R
 }
