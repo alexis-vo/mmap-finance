@@ -1,0 +1,8 @@
+// Corporate Finance
+digraph {
+	C [label="Corporate Finance" fillcolor="#c2e0c6" style=filled]
+	A [label=Accounting]
+	C -> A
+	R [label="Risk Management"]
+	C -> R
+}
