@@ -1,0 +1,33 @@
+# Finance Mindmap
+
+```mermaid
+mindmap
+  root((Finance))
+    Markets
+      Stocks
+        IPO
+        Value
+        Growth
+      Bonds
+        Duration
+        Yield Curve
+      Derivatives
+        Options
+          Call
+          Put
+        Futures
+    Corporate_Finance
+      NPV
+      WACC
+      Mergers & Acquisitions
+    Accounting
+      IFRS
+      US_GAAP
+    Risk_Management
+      Credit
+      Market
+      Liquidity
+    Regulation
+      Basel_III
+      Solvency_II
+```
