@@ -1,22 +1,7 @@
-from personalFinance.personalFinance import PersonalFinance
-from corporateFinance.corporateFinance import CorporateFinance
-from publicFinance.publicFinance import PublicFinance
+from build_subgraphs import build_subgraphs
 from merge import FinanceMergeDynamic
 
-def build_subgraphs(view=False):
-    pf = PersonalFinance()
-    pf.add_budgeting(); pf.add_savings()
-    pf.generate(view=view)
-
-    cf = CorporateFinance()
-    cf.add_accounting(); cf.add_risk_management()
-    cf.generate(view=view)
-
-    pubf = PublicFinance()
-    pubf.add_taxation()
-    pubf.generate(view=view)
-
-def main(view=False, merge_global=True):
+def main(view: bool = False, merge_global: bool = True) -> None:
     build_subgraphs(view=view)
 
     if merge_global:

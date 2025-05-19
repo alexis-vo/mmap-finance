@@ -3,7 +3,7 @@ import pydot
 from graphviz import Digraph
 
 class FinanceMergeDynamic:
-    def __init__(self, input_folder='generatedGraphs', output_folder='generatedGraphs'):
+    def __init__(self, input_folder='generatedGraphs/dot', output_folder='generatedGraphs'):
         self.input_folder  = input_folder
         self.output_folder = output_folder
         self.final         = Digraph(comment='Merged Finance Topics')

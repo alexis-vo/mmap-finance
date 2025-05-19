@@ -13,16 +13,19 @@ class FinanceGraphBase:
         self.graph.attr(rankdir=rankdir)
 
     def generate(self, view=False, fmt='pdf'):
-        """Create <name>.<fmt> + <name>.dot in generatedGraphs/."""
-        out = GENERATED_DIR / self.name
+        """Create <GENERATED_DIR>/<fmt>/<name>.(fmt|dot)."""
+        subdir_fmt = GENERATED_DIR / fmt
+        subdir_fmt.mkdir(parents=True, exist_ok=True)
+        subdir_dot = GENERATED_DIR / 'dot'
+        subdir_dot.mkdir(parents=True, exist_ok=True)
 
+        outfile = subdir_fmt / self.name
         self.graph.render(
-            filename=str(out),
+            filename=str(outfile),
             format=fmt,
             view=view,
             cleanup=True
         )
 
-        (GENERATED_DIR / f'{self.name}.dot').write_text(
-            self.graph.source, encoding='utf-8'
-        )
+        dot_path = subdir_dot / f'{self.name}.dot'
+        dot_path.write_text(self.graph.source, encoding='utf-8')
