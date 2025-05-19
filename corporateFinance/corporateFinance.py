@@ -18,3 +18,24 @@ class CorporateFinance(FinanceGraphBase):
     def add_growth(self):
         self.graph.node('G', 'Growth', style='filled', fillcolor=self.COLOR)
         self.graph.edge('root', 'G')
+
+    # --- new branch for risk ----
+    def add_financial_instruments(self):
+        self.graph.node('FI', 'Financial Instruments', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('R', 'FI')
+
+    def add_derivatives(self):
+        self.graph.node('D', 'Derivatives', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('FI', 'D')
+
+    def add_options(self):
+        self.graph.node('O', 'Options', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('D', 'O')
+
+    def add_option_pricing_models(self):
+        self.graph.node('OPM', 'Option Pricing Models', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('O', 'OPM')
+
+    def add_crr_model(self):
+        self.graph.node('CRR', 'Cox Ross Rubinstein Model', style='filled', fillcolor=self.COLOR)
+        self.graph.edge('OPM', 'CRR')

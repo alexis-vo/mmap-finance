@@ -20,6 +20,11 @@ def build_subgraphs(view: bool = False) -> None:
     cf.add_capital()
     cf.add_risk()
     cf.add_growth()
+    cf.add_financial_instruments()
+    cf.add_derivatives()
+    cf.add_options()
+    cf.add_option_pricing_models()
+    cf.add_crr_model()
     cf.generate(view=view)
 
     # --- Public ---------------------------------------------------------

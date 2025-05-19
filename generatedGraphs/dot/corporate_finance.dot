@@ -8,4 +8,14 @@ digraph {
 	root -> R
 	G [label=Growth fillcolor="#DDE9FF" style=filled]
 	root -> G
+	FI [label="Financial Instruments" fillcolor="#DDE9FF" style=filled]
+	R -> FI
+	D [label=Derivatives fillcolor="#DDE9FF" style=filled]
+	FI -> D
+	O [label=Options fillcolor="#DDE9FF" style=filled]
+	D -> O
+	OPM [label="Option Pricing Models" fillcolor="#DDE9FF" style=filled]
+	O -> OPM
+	CRR [label="Cox Ross Rubinstein Model" fillcolor="#DDE9FF" style=filled]
+	OPM -> CRR
 }
