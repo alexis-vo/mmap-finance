@@ -19,4 +19,4 @@ dot.edge('D', 'Taxation')
 dot.edge('D', 'Spending')
 dot.edge('D', 'Policy')
 
-dot.render('finance_topics', view=True)
+dot.render('finance_topics2', view=True)

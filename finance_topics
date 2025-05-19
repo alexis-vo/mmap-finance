@@ -9,7 +9,11 @@ digraph {
 	A -> D
 	B -> Budgeting
 	B -> Savings
-	C -> Accounting
-	C -> "Risk Management"
+	B -> Investing
+	C -> Capital
+	C -> Risk
+	C -> Growth
 	D -> Taxation
+	D -> Spending
+	D -> Policy
 }
